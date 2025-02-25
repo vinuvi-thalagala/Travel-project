@@ -3,6 +3,8 @@ import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import bodyParser from 'body-parser';
 
+import travelRouter from './routes/travels.js';
+
 dotenv.config();
 
 const app = express();
@@ -13,9 +15,11 @@ app.use(bodyParser.json());
 
 const URL = process.env.MONGODB_URL;
 
-mongoose.connect(URL)
+mongoose.connect(URL);
 
 const connection = mongoose.connection;
+
+ app.use('/travels', travelRouter);
 
 connection.once("open", () => {
     console.log('Mongo DB connection is successfull');
