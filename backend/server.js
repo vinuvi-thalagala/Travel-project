@@ -26,5 +26,6 @@ connection.once("open", () => {
 });
 
 app.listen(PORT, () => {
-    console.log(`App is running on {$PORT}`)
+    console.log(`App is running on ${PORT}`);
+
 });
