@@ -14,7 +14,8 @@ app.use(bodyParser.json());
 const URL = process.env.MONGODB_URL;
 
 mongoose.connect(URL, {
-    useUnifiedTopologyL : true,
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
 
 })
 
